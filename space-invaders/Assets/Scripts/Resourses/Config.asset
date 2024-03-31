@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed1ea5f28bdff84ea2b1db9d9b33d19, type: 3}
+  m_Name: Config
+  m_EditorClassIdentifier: 
+  lives: 3
+  InvaderBase: {fileID: 1551307908973724939, guid: 984c31f2f1206774085587cae40258e2, type: 3}
+  invaders:
+  - animationSpritesInvaders:
+    - {fileID: 21300000, guid: c8e61345d3987184b973a87b6d24e87a, type: 3}
+    - {fileID: 21300000, guid: 62bd310435a5d0c468ae8052f0a3e83c, type: 3}
+    animationTimeInvaders: 1
+    scoreInvaders: 10
+  - animationSpritesInvaders:
+    - {fileID: 21300000, guid: c8e61345d3987184b973a87b6d24e87a, type: 3}
+    - {fileID: 21300000, guid: 62bd310435a5d0c468ae8052f0a3e83c, type: 3}
+    animationTimeInvaders: 1
+    scoreInvaders: 10
+  - animationSpritesInvaders:
+    - {fileID: 21300000, guid: faa33742ca0e31347b439b55fb7cecfd, type: 3}
+    - {fileID: 21300000, guid: f71a1796fdbee8e49b6f314e661ba7e1, type: 3}
+    animationTimeInvaders: 1
+    scoreInvaders: 20
+  - animationSpritesInvaders:
+    - {fileID: 21300000, guid: faa33742ca0e31347b439b55fb7cecfd, type: 3}
+    - {fileID: 21300000, guid: f71a1796fdbee8e49b6f314e661ba7e1, type: 3}
+    animationTimeInvaders: 1
+    scoreInvaders: 30
+  - animationSpritesInvaders:
+    - {fileID: 21300000, guid: b5f20663b636d4b4eb010e7fb8012499, type: 3}
+    - {fileID: 21300000, guid: 695deb1fbb284dd46be3ecd6ad6b2c49, type: 3}
+    animationTimeInvaders: 1
+    scoreInvaders: 30
+  speedInvaders:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.1745758
+      value: 3.0547905
+      inSlope: 0.11610388
+      outSlope: 0.11610388
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.6639861
+    - serializedVersion: 3
+      time: 20.138784
+      value: 10.001563
+      inSlope: 0.5911567
+      outSlope: 0.5911567
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.18158841
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  rows: 5
+  columns: 11
+  missilePrefabs:
+  - {fileID: 6161936928069685931, guid: 3c328e673b90a7f418f1f1e66f83522b, type: 3}
+  - {fileID: 6161936928069685931, guid: 359fbc36322791247b7f116238ba4cbd, type: 3}
+  missileSpawnRate: 1
