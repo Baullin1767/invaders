@@ -36,13 +36,14 @@ public class Projectile : MonoBehaviour
 
         if (bunker == null || bunker.CheckCollision(collider, transform.position)
             || other.gameObject.layer == LayerMask.NameToLayer("Boomb"))
-        {
-            Camera.main.transform
-                .DOShakePosition(0.15f, 1f, 10, 90f, false, true, ShakeRandomnessMode.Harmonic)
-                .SetEase(Ease.InOutBounce)
-                .SetLink(Camera.main.gameObject);
             Destroy(gameObject);
-        }
+
+
+        //if(other.gameObject.layer == LayerMask.NameToLayer("Bunker"))
+        //    Camera.main.transform
+        //        .DOShakePosition(0.05f, 0.5f, 10, 90f, false, true, ShakeRandomnessMode.Harmonic)
+        //        .SetEase(Ease.InOutBounce)
+        //        .SetLink(Camera.main.gameObject);
     }
 
 }

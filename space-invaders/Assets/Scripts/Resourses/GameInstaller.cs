@@ -7,6 +7,8 @@ public class GameInstaller : MonoInstaller
     GameConfig config;
     public override void InstallBindings()
     {
+        Container.Bind<KeyboardInput>().AsSingle();
+
         Container.BindFactory<Sprite[], float, int, GameManager, Invaders, SignalBus, Invader, Invader.InvaderFactory>()
             .FromComponentInNewPrefab(config.InvaderBase)
             .WithGameObjectName("Invader");

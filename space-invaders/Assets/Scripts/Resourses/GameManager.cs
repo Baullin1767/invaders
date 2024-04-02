@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 using UniRx;
+using System.Collections;
 
 public sealed class GameManager : MonoBehaviour
 {
@@ -33,12 +34,12 @@ public sealed class GameManager : MonoBehaviour
         Observable.EveryUpdate()
             .Where(_ => lives <= 0 && Input.GetKeyDown(KeyCode.Return))
             .Subscribe(_ => { NewGame(); });
-
     }
     private void NewGame()
     {
         uiController.HideGameOverUI();
-
+        uiController.HidePausePanelUI();
+        Time.timeScale = 1.0f;
         SetScore(0);
         SetLives(config.lives);
         NewRound();
@@ -121,5 +122,4 @@ public sealed class GameManager : MonoBehaviour
             OnPlayerKilled(player);
         }
     }
-
 }
