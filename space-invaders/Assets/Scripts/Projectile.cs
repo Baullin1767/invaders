@@ -10,9 +10,11 @@ public class Projectile : MonoBehaviour
 
     private new BoxCollider2D collider;
 
+    Camera playerCamera;
     private void Awake()
     {
         collider = GetComponent<BoxCollider2D>();
+        playerCamera = Camera.main;
     }
 
     private void Update()
@@ -39,11 +41,11 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
 
 
-        //if(other.gameObject.layer == LayerMask.NameToLayer("Bunker"))
-        //    Camera.main.transform
-        //        .DOShakePosition(0.05f, 0.5f, 10, 90f, false, true, ShakeRandomnessMode.Harmonic)
-        //        .SetEase(Ease.InOutBounce)
-        //        .SetLink(Camera.main.gameObject);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Bunker"))
+            playerCamera.transform
+                .DOShakePosition(0.15f, 1f, 10, 90f, false, true, ShakeRandomnessMode.Harmonic)
+                .SetEase(Ease.InBack)
+                .SetLink(playerCamera.gameObject);
     }
 
 }

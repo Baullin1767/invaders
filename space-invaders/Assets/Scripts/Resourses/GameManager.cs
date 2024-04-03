@@ -25,15 +25,31 @@ public sealed class GameManager : MonoBehaviour
     public int Score => score;
     public int Lives => lives;
 
+#if UNITY_EDITOR
+    [Inject]
+    KeyboardInput keyboardInput;
+#else
+    [Inject]
+    MobilInput mobilInput;
+
+#endif
+
+
     private void Start()
     {
         bunkers = FindObjectsOfType<Bunker>();
 
         NewGame();
         bunkers = FindObjectsOfType<Bunker>();
+#if UNITY_EDITOR
         Observable.EveryUpdate()
-            .Where(_ => lives <= 0 && Input.GetKeyDown(KeyCode.Return))
+            .Where(_ => lives <= 0 && keyboardInput.GetButtonShoot())
             .Subscribe(_ => { NewGame(); });
+#else
+        Observable.EveryUpdate()
+            .Where(_ => lives <= 0 && mobilInput.GetButtonShoot())
+            .Subscribe(_ => { NewGame(); });
+#endif
     }
     private void NewGame()
     {
